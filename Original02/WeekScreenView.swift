@@ -94,6 +94,10 @@ private struct WeekMealRow: View {
                 .stroke(AppThemeColor.support.opacity(0.9), lineWidth: 1)
         )
         .shadow(color: .black.opacity(0.05), radius: 7, x: 0, y: 2)
+        .contentShape(Rectangle())
+        .onTapGesture {
+            onEdit()
+        }
     }
 
     /// 朝昼夜の食数チップです。
