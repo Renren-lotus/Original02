@@ -19,6 +19,8 @@ struct MealEditorSheetView: View {
     @State private var lunch: MealStatus = .undecided
     @State private var dinner: MealStatus = .undecided
     @State private var note: String = ""
+    @State private var hasInitialized = false
+    @State private var saveFeedbackTrigger = 0
 
     var body: some View {
         VStack(spacing: 0) {
@@ -30,8 +32,13 @@ struct MealEditorSheetView: View {
 
                 Spacer()
 
-                Text(targetDate.jpMonthDayWeekday)
-                    .font(.system(size: 18, weight: .semibold))
+                VStack(spacing: 3) {
+                    Text("ごはん予定を編集")
+                        .font(.system(size: 17, weight: .semibold))
+                    Text(targetDate.jpMonthDayWeekday)
+                        .font(.system(size: 13, weight: .medium))
+                        .foregroundStyle(.secondary)
+                }
 
                 Spacer()
 
@@ -41,39 +48,57 @@ struct MealEditorSheetView: View {
             .padding(.horizontal, 20)
             .padding(.top, 12)
 
-            Form {
-                Section("入力者") {
-                    Text(currentUserName)
-                        .font(.system(size: 18, weight: .medium))
-                }
-                .listRowBackground(AppThemeColor.cardBackground)
+            ScrollView {
+                VStack(spacing: 14) {
+                    sectionCard(title: "入力者") {
+                        Text(currentUserName)
+                            .font(.system(size: 18, weight: .medium))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
 
-                Section("食事") {
-                    mealSelectorRow(title: MealTime.breakfast.rawValue, selection: $breakfast)
-                    mealSelectorRow(title: MealTime.lunch.rawValue, selection: $lunch)
-                    mealSelectorRow(title: MealTime.dinner.rawValue, selection: $dinner)
-                }
-                .listRowBackground(AppThemeColor.cardBackground)
+                    sectionCard(title: "今日のごはん") {
+                        MealEditSection(title: MealTime.breakfast.rawValue, selection: $breakfast)
+                        Divider()
+                        MealEditSection(title: MealTime.lunch.rawValue, selection: $lunch)
+                        Divider()
+                        MealEditSection(title: MealTime.dinner.rawValue, selection: $dinner)
+                    }
 
-                Section("メモ") {
-                    TextField("メモを入力", text: $note, axis: .vertical)
-                        .lineLimit(2...4)
+                    sectionCard(title: "ひとことメモ") {
+                        ZStack(alignment: .topLeading) {
+                            if note.isEmpty {
+                                Text("帰宅時間や連絡メモ")
+                                    .font(.system(size: 16))
+                                    .foregroundStyle(.secondary)
+                                    .padding(.top, 8)
+                                    .padding(.leading, 6)
+                            }
+
+                            TextEditor(text: $note)
+                                .font(.system(size: 16))
+                                .frame(minHeight: 120)
+                                .scrollContentBackground(.hidden)
+                                .background(Color.clear)
+                        }
+                    }
                 }
-                .listRowBackground(AppThemeColor.cardBackground)
+                .padding(.horizontal, 20)
+                .padding(.top, 16)
+                .padding(.bottom, 12)
             }
-            .scrollContentBackground(.hidden)
             .background(AppThemeColor.baseBackground)
 
             Button {
+                saveFeedbackTrigger += 1
                 onSave(breakfast, lunch, dinner, note)
             } label: {
-                Text("保存")
+                Text("予定を保存")
                     .font(.system(size: 18, weight: .semibold))
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
+                    .padding(.vertical, 16)
                     .background(AppThemeColor.accent)
                     .foregroundStyle(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
             }
             .buttonStyle(.plain)
             .padding(.horizontal, 20)
@@ -81,44 +106,33 @@ struct MealEditorSheetView: View {
             .padding(.bottom, 22)
             .background(AppThemeColor.baseBackground)
         }
+        .sensoryFeedback(.success, trigger: saveFeedbackTrigger)
         .background(AppThemeColor.baseBackground)
         .onAppear {
+            guard !hasInitialized else { return }
             setupInitialState()
+            hasInitialized = true
         }
     }
 
-    /// 食事選択行を表示します。
-    private func mealSelectorRow(title: String, selection: Binding<MealStatus>) -> some View {
-        HStack {
+    /// セクション見出し付きのカードです。
+    private func sectionCard<Content: View>(title: String, @ViewBuilder content: () -> Content) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
             Text(title)
-                .font(.system(size: 17, weight: .medium))
-                .frame(width: 44, alignment: .leading)
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(.secondary)
 
-            Spacer()
-
-            HStack(spacing: 12) {
-                mealChoiceButton(label: "未定", status: .undecided, selection: selection)
-                mealChoiceButton(label: "家", status: .home, selection: selection)
-                mealChoiceButton(label: "外", status: .out, selection: selection)
-            }
+            content()
         }
-        .padding(.vertical, 4)
-    }
-
-    /// 1つの食事選択ボタンを表示します。
-    private func mealChoiceButton(label: String, status: MealStatus, selection: Binding<MealStatus>) -> some View {
-        Button {
-            selection.wrappedValue = status
-        } label: {
-            VStack(spacing: 6) {
-                MealStatusCircle(status: status == selection.wrappedValue ? status : .undecided)
-                Text(label)
-                    .font(.system(size: 12))
-                    .foregroundStyle(.black)
-            }
-            .frame(width: 44)
-        }
-        .buttonStyle(.plain)
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(AppThemeColor.cardBackground)
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(AppThemeColor.support.opacity(0.9), lineWidth: 1)
+        )
+        .shadow(color: .black.opacity(0.05), radius: 7, x: 0, y: 2)
     }
 
     /// 初回表示時の状態を設定します。
@@ -128,6 +142,37 @@ struct MealEditorSheetView: View {
         lunch = existingMemberPlan.lunch
         dinner = existingMemberPlan.dinner
         note = existingMemberPlan.note
+    }
+}
+
+/// 朝昼夜の入力行です。
+private struct MealEditSection: View {
+    let title: String
+    @Binding var selection: MealStatus
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundStyle(.primary)
+
+            HStack(spacing: 10) {
+                statusButton(.undecided)
+                statusButton(.home)
+                statusButton(.out)
+            }
+        }
+    }
+
+    /// ステータス選択ボタンです。
+    private func statusButton(_ status: MealStatus) -> some View {
+        Button {
+            selection = status
+        } label: {
+            MealStatusPill(status: status)
+                .opacity(selection == status ? 1.0 : 0.6)
+        }
+        .buttonStyle(.plain)
     }
 }
 

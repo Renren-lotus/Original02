@@ -9,11 +9,12 @@ import SwiftUI
 
 /// グループ作成・参加を行う初期設定画面です。
 struct GroupSetupView: View {
-    let onCreateGroup: (String) -> Void
-    let onJoinGroup: (String, String) -> Void
+    let onCreateGroup: (String, String) -> Void
+    let onJoinGroup: (String, String, String) -> Void
 
     @State private var mode: SetupMode = .create
     @State private var userName = ""
+    @State private var inputGroupName = ""
     @State private var inputGroupId = ""
 
     var body: some View {
@@ -30,6 +31,13 @@ struct GroupSetupView: View {
                     Text("あなたの名前")
                         .font(.system(size: 14, weight: .medium))
                     TextField("例: れん", text: $userName)
+                        .textFieldStyle(.roundedBorder)
+                }
+
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("グループ名（表示名）")
+                        .font(.system(size: 14, weight: .medium))
+                    TextField("例: わが家のごはん", text: $inputGroupName)
                         .textFieldStyle(.roundedBorder)
                 }
 
@@ -52,9 +60,9 @@ struct GroupSetupView: View {
 
                 Button {
                     if mode == .create {
-                        onCreateGroup(trimmedUserName)
+                        onCreateGroup(trimmedUserName, trimmedGroupName)
                     } else {
-                        onJoinGroup(trimmedUserName, trimmedGroupId)
+                        onJoinGroup(trimmedUserName, trimmedGroupId, trimmedGroupName)
                     }
                 } label: {
                     Text(mode.primaryButtonTitle)
@@ -77,7 +85,7 @@ struct GroupSetupView: View {
 
     /// 入力値を送信可能か判定します。
     private var canSubmit: Bool {
-        if trimmedUserName.isEmpty {
+        if trimmedUserName.isEmpty || trimmedGroupName.isEmpty {
             return false
         }
         if mode == .join {
@@ -92,6 +100,10 @@ struct GroupSetupView: View {
 
     private var trimmedGroupId: String {
         inputGroupId.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+    }
+
+    private var trimmedGroupName: String {
+        inputGroupName.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
 
@@ -123,7 +135,7 @@ private enum SetupMode: String, CaseIterable, Identifiable {
 
 #Preview {
     GroupSetupView(
-        onCreateGroup: { _ in },
-        onJoinGroup: { _, _ in }
+        onCreateGroup: { _, _ in },
+        onJoinGroup: { _, _, _ in }
     )
 }

@@ -18,7 +18,15 @@ struct WeekScreenView: View {
         ScrollView {
             VStack(spacing: 12) {
                 ForEach(dates, id: \.self) { date in
-                    weekRow(for: date)
+                    WeekMealRow(
+                        date: date,
+                        breakfastCount: mealCount(for: .breakfast, date: date),
+                        lunchCount: mealCount(for: .lunch, date: date),
+                        dinnerCount: mealCount(for: .dinner, date: date),
+                        onEdit: {
+                            onEditDate(date)
+                        }
+                    )
                 }
             }
             .padding(.horizontal, 20)
@@ -37,55 +45,72 @@ struct WeekScreenView: View {
         }
     }
 
-    /// 1日分の行を作ります。
-    private func weekRow(for date: Date) -> some View {
+    /// 指定日の食数を返します。
+    private func mealCount(for mealTime: MealTime, date: Date) -> Int {
         let targetPlan = plans.first(where: { $0.dayKey == DayPlan.dayKey(from: date) })
+        guard let targetPlan else { return 0 }
+        return targetPlan.memberPlans.filter { $0.status(for: mealTime) == .home }.count
+    }
+}
 
-        return HStack(spacing: 12) {
-            Text(date.jpMonthDayWeekday)
-                .font(.system(size: 18, weight: .medium))
-                .frame(width: 92, alignment: .leading)
+/// 1日分の必要食数を表示する行です。
+private struct WeekMealRow: View {
+    let date: Date
+    let breakfastCount: Int
+    let lunchCount: Int
+    let dinnerCount: Int
+    let onEdit: () -> Void
 
-            HStack(spacing: 16) {
-                ForEach(MealTime.allCases) { meal in
-                    MealStatusCircle(status: summaryStatus(for: meal, in: targetPlan))
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Text(date.jpMonthDayWeekday)
+                    .font(.system(size: 18, weight: .semibold))
+
+                Spacer()
+
+                Button {
+                    onEdit()
+                } label: {
+                    Label("予定を編集", systemImage: "pencil")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(AppThemeColor.accent)
                 }
+                .buttonStyle(.plain)
             }
 
-            Spacer()
-
-            Button {
-                onEditDate(date)
-            } label: {
-                Image(systemName: "pencil.circle")
-                    .font(.system(size: 24))
-                    .foregroundStyle(AppThemeColor.accent)
+            HStack(spacing: 10) {
+                countPill(title: MealTime.breakfast.rawValue, count: breakfastCount)
+                countPill(title: MealTime.lunch.rawValue, count: lunchCount)
+                countPill(title: MealTime.dinner.rawValue, count: dinnerCount)
             }
-            .buttonStyle(.plain)
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 12)
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .background(AppThemeColor.cardBackground)
+        .clipShape(RoundedRectangle(cornerRadius: 12))
         .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(AppThemeColor.support, lineWidth: 1)
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(AppThemeColor.support.opacity(0.9), lineWidth: 1)
         )
+        .shadow(color: .black.opacity(0.05), radius: 7, x: 0, y: 2)
     }
 
-    /// 1日の代表状態を返します。
-    private func summaryStatus(for mealTime: MealTime, in plan: DayPlan?) -> MealStatus {
-        guard let plan else { return .undecided }
-
-        let homeCount = plan.memberPlans.filter { $0.status(for: mealTime) == .home }.count
-        let outCount = plan.memberPlans.filter { $0.status(for: mealTime) == .out }.count
-
-        if homeCount > 0 {
-            return .home
+    /// 朝昼夜の食数チップです。
+    private func countPill(title: String, count: Int) -> some View {
+        HStack(spacing: 6) {
+            Text(title)
+                .font(.system(size: 13, weight: .medium))
+                .foregroundStyle(.secondary)
+            Text("\(count)食")
+                .font(.system(size: 15, weight: .semibold))
+                .foregroundStyle(AppThemeColor.accent)
         }
-        if outCount > 0 {
-            return .out
-        }
-        return .undecided
+        .padding(.horizontal, 10)
+        .padding(.vertical, 7)
+        .background(AppThemeColor.support.opacity(0.45))
+        .clipShape(Capsule())
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

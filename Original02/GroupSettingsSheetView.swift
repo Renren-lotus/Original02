@@ -11,15 +11,34 @@ import SwiftUI
 struct GroupSettingsSheetView: View {
     let userName: String
     let groupId: String
+    let onUpdateGroupName: (String) -> Void
     let onClose: () -> Void
     let onLeaveGroup: () -> Void
 
     @State private var showLeaveAlert = false
+    @State private var editableGroupName: String
+
+    init(
+        userName: String,
+        groupName: String,
+        groupId: String,
+        onUpdateGroupName: @escaping (String) -> Void,
+        onClose: @escaping () -> Void,
+        onLeaveGroup: @escaping () -> Void
+    ) {
+        self.userName = userName
+        self.groupId = groupId
+        self.onUpdateGroupName = onUpdateGroupName
+        self.onClose = onClose
+        self.onLeaveGroup = onLeaveGroup
+        _editableGroupName = State(initialValue: groupName)
+    }
 
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 18) {
                 infoRow(title: "ユーザー名", value: userName)
+                groupNameEditor
                 infoRow(title: "グループID", value: groupId)
 
                 Text("このグループIDを共有すると、同じグループとして使えます。")
@@ -87,12 +106,35 @@ struct GroupSettingsSheetView: View {
                 )
         }
     }
+
+    /// グループ名を編集する行です。
+    private var groupNameEditor: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("グループ名")
+                .font(.system(size: 13, weight: .medium))
+                .foregroundStyle(.secondary)
+
+            HStack(spacing: 8) {
+                TextField("グループ名", text: $editableGroupName)
+                    .textFieldStyle(.roundedBorder)
+
+                Button("保存") {
+                    onUpdateGroupName(editableGroupName)
+                }
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(AppThemeColor.accent)
+                .buttonStyle(.plain)
+            }
+        }
+    }
 }
 
 #Preview {
     GroupSettingsSheetView(
         userName: "れん",
+        groupName: "わが家のごはん",
         groupId: "A3FK9Q",
+        onUpdateGroupName: { _ in },
         onClose: { },
         onLeaveGroup: { }
     )

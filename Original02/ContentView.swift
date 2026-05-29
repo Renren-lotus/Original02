@@ -6,12 +6,9 @@
 //
 
 import SwiftUI
-import SwiftData
 
 /// アプリのホーム画面全体を表示するViewです。
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query(sort: \DayPlan.date) private var dayPlans: [DayPlan]
     @State private var viewModel = MealPlannerViewModel()
     @State private var session = LocalGroupSession()
 
@@ -21,25 +18,33 @@ struct ContentView: View {
     var body: some View {
         @Bindable var bindableViewModel = viewModel
 
-        let plansInGroup = dayPlans.filter { $0.groupId == session.groupId }
-        let todayPlan = viewModel.plan(for: Date(), groupId: session.groupId, in: plansInGroup)
+        let todayPlan = viewModel.plan(for: Date(), groupId: session.groupId)
         let members = viewModel.members(
             groupId: session.groupId,
             currentUserId: session.currentUserId,
-            currentUserName: session.currentUserName,
-            plans: plansInGroup
+            currentUserName: session.currentUserName
         )
-        let editingTargetPlan = viewModel.plan(for: viewModel.editingDate, groupId: session.groupId, in: plansInGroup)
+        let editingTargetPlan = viewModel.plan(for: viewModel.editingDate, groupId: session.groupId)
         let currentUserPlan = editingTargetPlan?.memberPlans.first(where: { $0.memberId == session.currentUserId })
 
         VStack(spacing: 0) {
+            if !viewModel.syncMessage.isEmpty {
+                Text(viewModel.syncMessage)
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(Color.red.opacity(0.8))
+            }
+
             HomeTabHeader(selectedPage: $bindableViewModel.selectedPage)
                 .padding(.top, 8)
                 .padding(.horizontal, 20)
 
             TabView(selection: $bindableViewModel.selectedPage) {
                 TodayScreenView(
-                    groupId: session.groupId,
+                    groupName: session.displayGroupName,
                     members: members,
                     homeCountBreakfast: viewModel.homeCount(for: .breakfast, in: todayPlan),
                     homeCountLunch: viewModel.homeCount(for: .lunch, in: todayPlan),
@@ -47,20 +52,23 @@ struct ContentView: View {
                     statusProvider: { memberId, meal in
                         viewModel.status(for: memberId, mealTime: meal, in: todayPlan)
                     },
+                    noteProvider: { memberId in
+                        viewModel.note(for: memberId, in: todayPlan)
+                    },
                     canEditMember: { memberId in
                         viewModel.canEdit(memberId: memberId, currentUserId: session.currentUserId)
                     },
                     onCycleStatus: { memberId, meal in
-                        viewModel.cycleStatus(
-                            for: memberId,
-                            mealTime: meal,
-                            date: Date(),
-                            groupId: session.groupId,
-                            currentUserId: session.currentUserId,
-                            currentUserName: session.currentUserName,
-                            plans: plansInGroup,
-                            context: modelContext
-                        )
+                        Task {
+                            await viewModel.cycleStatus(
+                                for: memberId,
+                                mealTime: meal,
+                                date: Date(),
+                                groupId: session.groupId,
+                                currentUserId: session.currentUserId,
+                                currentUserName: session.currentUserName
+                            )
+                        }
                     },
                     onOpenEditor: { memberId in
                         let canEdit = viewModel.canEdit(memberId: memberId, currentUserId: session.currentUserId)
@@ -73,7 +81,7 @@ struct ContentView: View {
                 .tag(HomePage.today)
 
                 WeekScreenView(
-                    plans: plansInGroup,
+                    plans: viewModel.plans.filter { $0.groupId == session.groupId },
                     onEditDate: { targetDate in
                         viewModel.openEditor(for: targetDate, canEdit: true)
                     }
@@ -93,18 +101,18 @@ struct ContentView: View {
                     viewModel.closeEditor()
                 },
                 onSave: { breakfast, lunch, dinner, note in
-                    viewModel.saveOwnPlan(
-                        for: viewModel.editingDate,
-                        groupId: session.groupId,
-                        currentUserId: session.currentUserId,
-                        currentUserName: session.currentUserName,
-                        breakfast: breakfast,
-                        lunch: lunch,
-                        dinner: dinner,
-                        note: note,
-                        plans: plansInGroup,
-                        context: modelContext
-                    )
+                    Task {
+                        await viewModel.saveOwnPlan(
+                            for: viewModel.editingDate,
+                            groupId: session.groupId,
+                            currentUserId: session.currentUserId,
+                            currentUserName: session.currentUserName,
+                            breakfast: breakfast,
+                            lunch: lunch,
+                            dinner: dinner,
+                            note: note
+                        )
+                    }
                 }
             )
             .presentationDetents([.large])
@@ -113,13 +121,18 @@ struct ContentView: View {
         .sheet(isPresented: $bindableViewModel.showingGroupSettings) {
             GroupSettingsSheetView(
                 userName: session.currentUserName,
+                groupName: session.displayGroupName,
                 groupId: session.groupId,
+                onUpdateGroupName: { newName in
+                    session.updateGroupName(newName)
+                },
                 onClose: {
                     viewModel.closeGroupSettings()
                 },
                 onLeaveGroup: {
                     viewModel.closeGroupSettings()
                     session.clearGroup()
+                    viewModel.stopRealtimeSync()
                 }
             )
             .presentationDetents([.medium, .large])
@@ -132,13 +145,23 @@ struct ContentView: View {
             )
         ) {
             GroupSetupView(
-                onCreateGroup: { userName in
-                    session.createGroup(userName: userName)
+                onCreateGroup: { userName, groupName in
+                    session.createGroup(userName: userName, groupName: groupName)
                 },
-                onJoinGroup: { userName, groupId in
-                    session.joinGroup(userName: userName, groupId: groupId)
+                onJoinGroup: { userName, groupId, groupName in
+                    session.joinGroup(userName: userName, groupId: groupId, groupName: groupName)
                 }
             )
+        }
+        .task(id: session.groupId) {
+            guard !AppRuntime.isPreview else { return }
+            if session.isSetupCompleted {
+                viewModel.startRealtimeSync(groupId: session.groupId)
+                await viewModel.refreshNow(groupId: session.groupId)
+            }
+        }
+        .onDisappear {
+            viewModel.stopRealtimeSync()
         }
     }
 }
@@ -174,5 +197,4 @@ private struct HomeTabHeader: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: DayPlan.self, inMemory: true)
 }

@@ -29,9 +29,20 @@ final class LocalGroupSession {
         }
     }
 
+    var groupName: String {
+        didSet {
+            defaults.set(groupName, forKey: Keys.groupName)
+        }
+    }
+
     var isSetupCompleted: Bool {
         !currentUserName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
         !groupId.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    var displayGroupName: String {
+        let trimmed = groupName.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? "みんなのごはん" : trimmed
     }
 
     private let defaults = UserDefaults.standard
@@ -40,31 +51,41 @@ final class LocalGroupSession {
         let savedUserId = defaults.string(forKey: Keys.currentUserId)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let savedName = defaults.string(forKey: Keys.currentUserName)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let savedGroupId = defaults.string(forKey: Keys.groupId)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let savedGroupName = defaults.string(forKey: Keys.groupName)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
 
         currentUserId = savedUserId.isEmpty ? UUID().uuidString : savedUserId
         currentUserName = savedName
         groupId = savedGroupId
+        groupName = savedGroupName
 
         defaults.set(currentUserId, forKey: Keys.currentUserId)
     }
 
     /// 新しいグループを作成します。
-    func createGroup(userName: String) {
+    func createGroup(userName: String, groupName: String) {
         currentUserName = userName.trimmingCharacters(in: .whitespacesAndNewlines)
         groupId = Self.generateGroupId()
+        self.groupName = groupName.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     /// 既存グループに参加します。
-    func joinGroup(userName: String, groupId: String) {
+    func joinGroup(userName: String, groupId: String, groupName: String) {
         currentUserName = userName.trimmingCharacters(in: .whitespacesAndNewlines)
         self.groupId = groupId
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .uppercased()
+        self.groupName = groupName.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    /// 表示用グループ名を更新します。
+    func updateGroupName(_ groupName: String) {
+        self.groupName = groupName.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     /// グループ参加状態だけを解除します。
     func clearGroup() {
         groupId = ""
+        groupName = ""
     }
 
     /// グループIDをランダム生成します。
@@ -79,5 +100,6 @@ final class LocalGroupSession {
         static let currentUserId = "group.currentUserId"
         static let currentUserName = "group.currentUserName"
         static let groupId = "group.groupId"
+        static let groupName = "group.groupName"
     }
 }

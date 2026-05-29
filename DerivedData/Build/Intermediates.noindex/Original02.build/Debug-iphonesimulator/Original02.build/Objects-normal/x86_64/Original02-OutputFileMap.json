@@ -1,0 +1,169 @@
+{
+  "" : {
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02-primary.dia",
+    "emit-module-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02-primary-emit-module.dia",
+    "pch" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02-primary.swiftdeps"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/AppRuntime.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppRuntime.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppRuntime.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppRuntime.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppRuntime.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppRuntime.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppRuntime.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppRuntime.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppRuntime~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/AppThemeColor.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppThemeColor.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppThemeColor.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppThemeColor.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppThemeColor.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppThemeColor.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppThemeColor.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppThemeColor.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/AppThemeColor~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/ContentView.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/ContentView.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/ContentView.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/ContentView.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/ContentView.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/ContentView.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/ContentView~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/Date+JapaneseDisplay.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Date+JapaneseDisplay.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Date+JapaneseDisplay.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Date+JapaneseDisplay.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Date+JapaneseDisplay.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Date+JapaneseDisplay.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Date+JapaneseDisplay.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Date+JapaneseDisplay.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Date+JapaneseDisplay~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/GroupRealtimeSyncService.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupRealtimeSyncService.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupRealtimeSyncService.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupRealtimeSyncService.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupRealtimeSyncService.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupRealtimeSyncService.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupRealtimeSyncService.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupRealtimeSyncService.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupRealtimeSyncService~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/GroupSettingsSheetView.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSettingsSheetView.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSettingsSheetView.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSettingsSheetView.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSettingsSheetView.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSettingsSheetView.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSettingsSheetView.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSettingsSheetView.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSettingsSheetView~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/GroupSetupView.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSetupView.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSetupView.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSetupView.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSetupView.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSetupView.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSetupView.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSetupView.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/GroupSetupView~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/LocalGroupSession.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/LocalGroupSession.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/LocalGroupSession.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/LocalGroupSession.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/LocalGroupSession.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/LocalGroupSession.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/LocalGroupSession.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/LocalGroupSession.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/LocalGroupSession~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/MealEditorSheetView.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealEditorSheetView.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealEditorSheetView.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealEditorSheetView.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealEditorSheetView.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealEditorSheetView.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealEditorSheetView.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealEditorSheetView.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealEditorSheetView~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/MealPlanModel.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlanModel.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlanModel.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlanModel.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlanModel.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlanModel.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlanModel.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlanModel.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlanModel~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/MealPlannerViewModel.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlannerViewModel.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlannerViewModel.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlannerViewModel.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlannerViewModel.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlannerViewModel.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlannerViewModel.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlannerViewModel.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealPlannerViewModel~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/MealStatusCircleView.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealStatusCircleView.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealStatusCircleView.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealStatusCircleView.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealStatusCircleView.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealStatusCircleView.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealStatusCircleView.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealStatusCircleView.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/MealStatusCircleView~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/Original02App.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02App.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02App.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02App.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02App.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02App.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02App.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02App.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/Original02App~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/TodayScreenView.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/TodayScreenView.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/TodayScreenView.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/TodayScreenView.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/TodayScreenView.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/TodayScreenView.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/TodayScreenView.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/TodayScreenView.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/TodayScreenView~partial.swiftmodule"
+  },
+  "/Users/ren/Desktop/Leadersオリジナルapp/Original02/Original02/WeekScreenView.swift" : {
+    "const-values" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/WeekScreenView.swiftconstvalues",
+    "dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/WeekScreenView.d",
+    "diagnostics" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/WeekScreenView.dia",
+    "index-unit-output-path" : "/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/WeekScreenView.o",
+    "llvm-bc" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/WeekScreenView.bc",
+    "object" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/WeekScreenView.o",
+    "swift-dependencies" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/WeekScreenView.swiftdeps",
+    "swiftmodule" : "/Users/ren/Desktop/Leadersオリジナルapp/Original02/DerivedData/Build/Intermediates.noindex/Original02.build/Debug-iphonesimulator/Original02.build/Objects-normal/x86_64/WeekScreenView~partial.swiftmodule"
+  }
+}

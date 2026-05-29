@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>12</integer>
+	<key>logs</key>
+	<dict>
+		<key>D07034AA-A3DB-40FD-9BE3-2BF8FE7A3681</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D07034AA-A3DB-40FD-9BE3-2BF8FE7A3681.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>65</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Original02 project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Original02</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project Original02 with scheme Original02</string>
+			<key>timeStartedRecording</key>
+			<real>801708646.33206296</real>
+			<key>timeStoppedRecording</key>
+			<real>801708657.86297095</real>
+			<key>title</key>
+			<string>Building project Original02 with scheme Original02</string>
+			<key>uniqueIdentifier</key>
+			<string>D07034AA-A3DB-40FD-9BE3-2BF8FE7A3681</string>
+		</dict>
+		<key>D5991AF2-D90D-4B12-A769-9AD126724176</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D5991AF2-D90D-4B12-A769-9AD126724176.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>132</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Original02 project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Original02</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project Original02 with scheme Original02</string>
+			<key>timeStartedRecording</key>
+			<real>801721455.21500695</real>
+			<key>timeStoppedRecording</key>
+			<real>801721461.167732</real>
+			<key>title</key>
+			<string>Building project Original02 with scheme Original02</string>
+			<key>uniqueIdentifier</key>
+			<string>D5991AF2-D90D-4B12-A769-9AD126724176</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

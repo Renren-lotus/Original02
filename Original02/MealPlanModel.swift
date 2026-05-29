@@ -110,11 +110,21 @@ final class DayPlan {
     static func dayKey(from date: Date) -> String {
         let calendar = Calendar.current
         let normalized = calendar.startOfDay(for: date)
-        return normalized.formatted(.dateTime.year().month().day())
+        return stableDayKeyFormatter.string(from: normalized)
     }
 
     /// グループと日付から一意キーを作成します。
     static func groupDayKey(groupId: String, date: Date) -> String {
         "\(groupId)-\(dayKey(from: date))"
     }
+
+    /// 同期向けの日付キーを固定形式で返すフォーマッターです。
+    private static let stableDayKeyFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 9 * 3600)
+        formatter.dateFormat = "yyyyMMdd"
+        return formatter
+    }()
 }
